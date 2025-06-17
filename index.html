@@ -2,54 +2,113 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfólio Deivid Martins</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
+    <header id="navbar">
         <div class="navGeral">
-            <button class="menu-btn" onclick="toggleMenu()">☰</button>
-            <h1>Deivid Martins</h1>
+            <div class="menu-icon" id="menu-toggle">&#9776;</div>
+            <h2>Portfólio Deivid Martins</h2>
+            <nav id="menu">
+                <ul>
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#habilidades">Habilidades</a></li>
+                    <li><a href="#projetos">Projetos</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
-    <!-- Menu lateral / modal -->
-    <div id="sideMenu" class="side-menu">
-        <ul>
-            <li><a href="#sobre" onclick="toggleMenu()">Sobre</a></li>
-            <li><a href="#habilidades" onclick="toggleMenu()">Habilidades</a></li>
-            <li><a href="#projetos" onclick="toggleMenu()">Projetos</a></li>
-            <li><a href="#contato" onclick="toggleMenu()">Contato</a></li>
-        </ul>
-    </div>
+    <div class="overlay" id="overlay"></div>
 
-    <!-- Overlay escuro -->
-    <div id="overlay" onclick="toggleMenu()"></div>
-
-    <!-- Seções da página -->
-    <section id="sobre" class="section">
-        <h2>Sobre</h2>
-        <p>Olá! Meu nome é Deivid Martins. Este é o meu portfólio de apresentação para o projeto de estágio.</p>
+    <!-- Seção Início -->
+    <section id="inicio">
+        <h1 id="typewriter"></h1>
+        <p>Desenvolvedor Front-End | HTML | CSS | JavaScript</p>
+        <a href="#contato" class="botao">Entrar em contato</a>
     </section>
 
-    <section id="habilidades" class="section">
+    <!-- Seção Sobre -->
+    <section id="sobre">
+        <h2>Sobre mim</h2>
+        <p>Sou um desenvolvedor apaixonado por criar interfaces web modernas e funcionais...</p>
+    </section>
+
+    <!-- Seção Habilidades -->
+    <section id="habilidades">
         <h2>Habilidades</h2>
-        <p>HTML, CSS, JavaScript, e mais algumas tecnologias...</p>
+        <ul>
+            <li>HTML5</li>
+            <li>CSS3</li>
+            <li>JavaScript</li>
+        </ul>
     </section>
 
-    <section id="projetos" class="section">
+    <!-- Seção Projetos -->
+    <section id="projetos">
         <h2>Projetos</h2>
-        <p>Veja alguns dos projetos que desenvolvi durante minha formação.</p>
+        <p>Aqui você pode adicionar seus principais projetos.</p>
     </section>
 
-    <section id="contato" class="section">
+    <!-- Seção Contato -->
+    <section id="contato">
         <h2>Contato</h2>
-        <p>Email: deivid@example.com</p>
-        <p>LinkedIn: linkedin.com/in/deivid-martins</p>
+        <p>Email: seuemail@example.com</p>
+        <p>Telefone: (00) 00000-0000</p>
     </section>
 
-    <script src="script.js"></script>
+    <script>
+        // Efeito de digitação
+        const texto = "Olá, eu sou o Deivid :)";
+        let index = 0;
+        const speed = 100;
+
+        function typeWriter() {
+            if (index < texto.length) {
+                document.getElementById("typewriter").innerHTML += texto.charAt(index);
+                index++;
+                setTimeout(typeWriter, speed);
+            }
+        }
+
+        window.onload = function() {
+            typeWriter();
+        };
+
+        // Menu hambúrguer + overlay
+        const toggle = document.getElementById('menu-toggle');
+        const menu = document.getElementById('menu');
+        const overlay = document.getElementById('overlay');
+
+        toggle.addEventListener('click', () => {
+            menu.classList.toggle('show');
+            overlay.classList.toggle('show');
+        });
+
+        overlay.addEventListener('click', () => {
+            menu.classList.remove('show');
+            overlay.classList.remove('show');
+        });
+
+        // Navbar aparece ao rolar pra cima
+        let lastScroll = 0;
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            if (currentScroll < lastScroll) {
+                navbar.style.top = "0";
+            } else {
+                navbar.style.top = "-80px";
+            }
+            lastScroll = currentScroll;
+        });
+    </script>
+
 </body>
 </html>
