@@ -1,0 +1,150 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #e0e0e0;
+    scroll-behavior: smooth;
+  }
+  
+  /* Header fixo */
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #1f1f1f;
+    color: #e0e0e0;
+    border-bottom: 3px solid #1e90ff;
+    transition: top 0.3s ease;
+    z-index: 1002;
+  }
+  
+  /* Conteúdo da nav */
+  header .navGeral {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: 60px;
+    padding: 0 50px;
+  }
+  
+  header .navGeral h1 {
+    font-size: 24px;
+    font-weight: bold;
+    flex: 1;
+    text-align: center;
+    color: #e0e0e0;
+  }
+  
+  /* Botão hamburguer */
+  .menu-btn {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #e0e0e0;
+    font-size: 28px;
+    cursor: pointer;
+  }
+  
+  /* Menu modal */
+  .side-menu {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    width: 280px;
+    background-color: #2c2c2c;
+    color: #e0e0e0;
+    padding: 30px 20px;
+    border-radius: 10px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 1001;
+  }
+  
+  .side-menu.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  
+  .side-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .side-menu ul li {
+    margin: 20px 0;
+    text-align: center;
+  }
+  
+  .side-menu ul li a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: 600;
+  }
+  
+  .side-menu ul li a:hover {
+    color: #1e90ff;
+  }
+  
+  /* Overlay escuro */
+  #overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+    z-index: 1000;
+  }
+  
+  #overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  /* Conteúdo da página */
+  .section {
+    padding: 100px 20px;
+    margin-top: 80px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #222222;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    margin-bottom: 40px;
+  }
+  
+  .section h2 {
+    color: #1e90ff;
+    margin-bottom: 20px;
+  }
+  
+  a {
+    color: #1e90ff;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+   
