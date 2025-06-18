@@ -89,6 +89,7 @@
         toggle.addEventListener('click', () => {
             menu.classList.toggle('show');
             overlay.classList.toggle('show');
+            toggle.classList.toggle('fixed-menu-icon')
         });
 
         overlay.addEventListener('click', () => {
@@ -107,6 +108,13 @@
                 navbar.style.top = "-80px";
             }
             lastScroll = currentScroll;
+        });
+        document.querySelectorAll('#menu a').forEach(link => {
+            link.addEventListener('click', () => {
+            menu.classList.remove('show');
+            overlay.classList.remove('show');
+            toggle.classList.remove('fixed-menu-icon');
+            });
         });
     </script>
 
