@@ -134,3 +134,108 @@ nav.show ul li a:hover {
     left: 20px;
     z-index: 1003;
 }
+#sobre h2{
+    text-align: center;
+}
+#sobre {
+    text-align: justify;
+    max-width: 800px;  /* opcional, para limitar a largura */
+    margin: auto;
+    color: rgba(255, 255, 255, 0.486);
+}
+#sobre p {
+    font-size: 20px;
+}
+#habilidades {
+    text-align: center;
+    padding: 80px 20px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+#habilidades h2 {
+    color: #1E90FF;
+    margin-bottom: 40px;
+    font-size: 28px;
+}
+
+#contato h2 {
+    color: #1E90FF;
+    text-align: center;
+}
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 20px;
+}
+
+.skill-card {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    border-bottom: 3px solid #1E90FF;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0,0,0,0.4);
+    border-bottom: 3px solid #187bcd;
+}
+.skill-card i {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.skill-card span {
+    display: block;
+    margin-top: 5px;
+    font-size: 16px;
+}
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 20px;
+    justify-items: center;
+  }
+  
+  .skill-card {
+    background: #1a1a1a;
+    color: #fff;
+    width: 140px;
+    height: 80px;
+    padding: 20px 10px;
+    border-radius: 10px;
+    border-bottom: 3px solid #1E90FF;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .skill-card i,
+  .skill-card svg {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 10px;
+  }
+  
+  .skill-card span {
+    font-size: 14px;
+    margin-top: auto;
+    text-align: center;
+  }
+  
+  .skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0,0,0,0.4);
+    border-bottom-color: #187bcd;
+  }
