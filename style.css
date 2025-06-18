@@ -159,10 +159,64 @@ nav.show ul li a:hover {
     font-size: 28px;
 }
 
-#contato h2 {
-    color: #1E90FF;
+#contato {
     text-align: center;
+    padding: 80px 20px;
+    max-width: 1100px;
+    margin: auto;
 }
+
+#contato h2 {
+    color: #ffffff;
+    margin-bottom: 40px;
+    font-size: 28px;
+}
+
+.contato-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 30px;
+    justify-items: center;
+}
+
+.contato-item {
+    background-color: #1a1a1a;
+    padding: 20px;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.contato-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0,0,0,0.4);
+}
+
+.contato-icon img {
+    width: 40px;
+    height: 40px;
+    filter: invert(50%) sepia(100%) saturate(500%) hue-rotate(250deg); /* Deixa o ícone com cor tipo lilás/roxo como na referência */
+}
+
+.contato-item h3 {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #ffffff;
+}
+
+.contato-item p {
+    margin-top: 5px;
+    color: #888;
+    font-size: 14px;
+}
+
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
