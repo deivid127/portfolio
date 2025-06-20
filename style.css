@@ -182,39 +182,46 @@ nav.show ul li a:hover {
 .contato-item {
     background-color: #1a1a1a;
     padding: 20px;
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
+    border-radius: 10px;
+    width: 150px;
+    height: 180px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     margin: auto;
     position: relative;
     box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-    transition: transform 0.3s, box-shadow 0.3s;
+    border: 2px solid #1E90FF;
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    text-decoration: none;
 }
 
 .contato-item:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 12px rgba(0,0,0,0.4);
+    border-color: #187bcd;
 }
 
-.contato-icon img {
-    width: 40px;
-    height: 40px;
-    filter: invert(50%) sepia(100%) saturate(500%) hue-rotate(250deg); /* Deixa o ícone com cor tipo lilás/roxo como na referência */
+.contato-item img {
+    width: 50px;
+    height: 50px;
+    filter: none; /* Mostra a cor original dos ícones */
+    margin-bottom: 10px;
 }
 
 .contato-item h3 {
-    margin-top: 20px;
+    margin: 10px 0 5px 0;
     font-size: 18px;
     color: #ffffff;
 }
 
 .contato-item p {
-    margin-top: 5px;
+    margin: 0;
     color: #888;
     font-size: 14px;
+    word-wrap: break-word;
+    text-align: center;
 }
 
 .skills-grid {
@@ -254,17 +261,24 @@ nav.show ul li a:hover {
 }
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
     gap: 20px;
     justify-items: center;
-  }
-  
-  .skill-card {
-    background: #1a1a1a;
-    color: #fff;
-    width: 140px;
-    height: 80px;
-    padding: 20px 10px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+
+@media (min-width: 1100px) {
+    .skills-grid {
+        grid-template-columns: repeat(6, 1fr); /* 6 colunas fixas em telas largas */
+    }
+}
+
+.skill-card {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    padding: 20px;
     border-radius: 10px;
     border-bottom: 3px solid #1E90FF;
     box-shadow: 0 4px 6px rgba(0,0,0,0.3);
@@ -273,23 +287,32 @@ nav.show ul li a:hover {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-  }
+    width: 120px;
+    height: 120px;
+}
   
-  .skill-card i,
-  .skill-card svg {
+.skill-card i,
+.skill-card svg,
+.skill-card img.skill-icon {
     width: 48px;
     height: 48px;
     margin-bottom: 10px;
-  }
+}
   
-  .skill-card span {
-    font-size: 14px;
-    margin-top: auto;
+.skill-card span {
     text-align: center;
-  }
+    font-size: 14px;
+    word-wrap: break-word;
+}
   
-  .skill-card:hover {
+.skill-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 12px rgba(0,0,0,0.4);
     border-bottom-color: #187bcd;
-  }
+}
+  .skill-card img.skill-icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 10px;
+    object-fit: contain;
+}
