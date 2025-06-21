@@ -29,13 +29,16 @@
     <div class="overlay" id="overlay"></div>
 
     <!-- Seção Início -->
-    <section id="inicio">
-        <h1 id="typewriter"></h1>
-        <p>Desenvolvedor Full-Stack</p>
-        <p>HTML | CSS | JavaScript | Python | SQL | MongoDB | C# | Scrum | UML</p>
-        <a href="#contato" class="botao">Entrar em contato</a>
-    </section>
+<section id="inicio">
+    <h1 id="typewriter"></h1>
+    <p>Desenvolvedor Full-Stack</p>
+    <p>HTML | CSS | JavaScript | Python | SQL | MongoDB | C# | Scrum | UML</p>
 
+    <div class="botoes-inicio">
+        <a href="#contato" class="botao">Entrar em contato</a>
+        <a href="assets/curriculo-deivid.pdf" download class="botao">Baixar Currículo</a>
+    </div>
+</section>
     <!-- Seção Sobre -->
     <section id="sobre">
         <h2>Sobre mim</h2>
@@ -120,22 +123,22 @@
     <h2>Meus Projetos</h2>
     <div class="projetos-grid">
 
-        <a href="https://github.com/seuusuario/nome-do-projeto1" target="_blank" class="projeto-item">
-            <img src="assets/projeto1.png" alt="Projeto 1">
+        <a href="https://github.com/deivid127/Faculdade/tree/main/Portf%C3%B3lios/portf%C3%B3lio%20Nelson" target="_blank" class="projeto-item">
+            <img src="assets/foto-zoologico.png" alt="Projeto 1">
             <div class="overlay-projeto">
                 <p>Ver no GitHub</p>
             </div>
         </a>
 
-        <a href="https://github.com/seuusuario/nome-do-projeto2" target="_blank" class="projeto-item">
-            <img src="assets/projeto2.png" alt="Projeto 2">
+        <a href="https://github.com/deivid127/Faculdade/tree/main/Sprint" target="_blank" class="projeto-item">
+            <img src="assets/IASD.png" alt="Projeto 2">
             <div class="overlay-projeto">
                 <p>Ver no GitHub</p>
             </div>
         </a>
 
-        <a href="https://github.com/seuusuario/nome-do-projeto3" target="_blank" class="projeto-item">
-            <img src="assets/projeto3.png" alt="Projeto 3">
+        <a href="https://github.com/deivid127/AppDeveloper" target="_blank" class="projeto-item">
+            <img src="assets/RCHLO.png" alt="Projeto 3">
             <div class="overlay-projeto">
                 <p>Ver no GitHub</p>
             </div>
@@ -231,6 +234,19 @@
             });
         });
     </script>
+    <script>
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    });
+
+    document.querySelectorAll('.projeto-item').forEach(item => {
+        observer.observe(item);
+    });
+</script>
   </section>
 </body>
 </html>
