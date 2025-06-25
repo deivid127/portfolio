@@ -46,7 +46,7 @@
     <h2>Minhas Habilidades</h2>
     <div class="skills-grid">
 
-        <div class="skill-card">
+        <div class
             <i class="devicon-html5-plain colored"></i>
             <span>HTML5</span>
         </div>
@@ -112,28 +112,76 @@
 <section id="projetos">
     <h2>Meus Projetos</h2>
     <div class="projetos-grid">
-
-        <a href="https://github.com/deivid127/Faculdade/tree/main/Portf%C3%B3lios/portf%C3%B3lio%20Nelson" target="_blank" class="projeto-item">
-            <img src="assets/foto-zoologico.png" alt="Projeto 1">
-            <div class="overlay-projeto">
-                <p>Ver no GitHub</p>
+        <div class="projeto-capa abrir-modal"
+            data-titulo="Zoológico de Guarulhos"
+            data-descricao="Meu primeiro projeto da vida utilizando linguagens web, como HTML5 e CSS3 e Java Script, ainda precisa de melhorias, mas é um projeto muito especial por ter sido o primeiro que desenvolvi. Ele consiste num site sobre o Zoológico de Guarulhos.<br>Principais Funcionalidades:<br>- Utilização conjunta das principais linguagens utilizadas no desenvolvimento WEB.<br>- Facilidade de adicionar novos animais e informações sobre o Zoológico.<br>Tecnologias utilizadas:<br>- HTML5<br>- CSS3<br>- JavaScript<br>O projeto está com alguns defeitos devido a minha inexperiência na época, sinta-se a vontade para acessar o repositório e alterá-lo futuramente."
+            data-imagem="assets/foto-zoologico.png"
+            data-link2="https://github.com/deivid127/Faculdade/tree/main/Aulas%20-%20WEB"
+            data-link3="https://linkedin.com/post1">
+            <img src="assets/foto-zoologico.png" alt="Zoológico de Guarulhos">
+            <div class="overlay-capa">
+                <span>Ver detalhes</span>
             </div>
-        </a>
-
-        <a href="https://github.com/deivid127/Faculdade/tree/main/Sprint" target="_blank" class="projeto-item">
-            <img src="assets/IASD.png" alt="Projeto 2">
-            <div class="overlay-projeto">
-                <p>Ver no GitHub</p>
+        </div>
+        <div class="projeto-capa abrir-modal"
+            data-titulo="IASD"
+            data-descricao="Primeiro projeto desenvolvido por meio de Sprints na Faculdade.
+            Neste projeto, realizado em grupo, foi desemvolvido por meio de 6 sprints, utilizando linguagem WEB, e conceitos de banco de dados, posteriormente foi acrescentado um banco de dados, pois se trata de um projeto onde o grupo deveria projetar para uma organização que trabalhasse com caridade sem fins lucrativos.
+            <br>Principais Funcionalidades:
+            - Possibilidade de criação de cadastros, por meio de doações que a igreja recebe
+            - No fim do projeto, não foi utilizado, porém existe a possibilidade de passar publicações de eventos da igreja.
+            - Fui responsável por desenvolver o front-end do projeto, utilizando HTML5, CSS3 e JavaScript. E na parte de banco de dados, criei os modelos de relações, atributos e entidades.
+            <br>Tecnologias utilizadas:
+            - HTML5
+            - CSS3
+            - JavaScript
+            - SQL"
+            data-imagem="assets/IASD.png"
+            data-link2="https://github.com/deivid127/Faculdade/tree/main/Sprint"
+            data-link3="https://linkedin.com/post1">
+            <img src="assets/IASD.png" alt="IASD">
+            <div class="overlay-capa">
+                <span>Ver detalhes</span>
+        </div>
+        </div>
+            <div class="projeto-capa abrir-modal"
+            data-titulo="IASD"
+            data-descricao="Primeiro projeto desenvolvido por meio de Sprints na Faculdade.
+            Neste projeto, realizado em grupo, foi desemvolvido por meio de 6 sprints, utilizando linguagem WEB, e conceitos de banco de dados, posteriormente foi acrescentado um banco de dados, pois se trata de um projeto onde o grupo deveria projetar para uma organização que trabalhasse com caridade sem fins lucrativos.
+            <br>Principais Funcionalidades:
+            - Possibilidade de criação de cadastros, por meio de doações que a igreja recebe
+            - No fim do projeto, não foi utilizado, porém existe a possibilidade de passar publicações de eventos da igreja.
+            - Fui responsável por desenvolver o front-end do projeto, utilizando HTML5, CSS3 e JavaScript. E na parte de banco de dados, criei os modelos de relações, atributos e entidades.
+            <br>Tecnologias utilizadas:
+            - HTML5
+            - CSS3
+            - JavaScript
+            - SQL"
+            data-imagem="assets/RCHLO.png"
+            data-link2="https://github.com/deivid127/AppDeveloper"
+            data-link3="https://linkedin.com/post1">
+            <img src="assets/RCHLO.png" alt="RCHLO">
+            <div class="overlay-capa">
+                <span>Ver detalhes</span>
             </div>
-        </a>
-
-        <a href="https://github.com/deivid127/AppDeveloper" target="_blank" class="projeto-item">
-            <img src="assets/RCHLO.png" alt="Projeto 3">
-            <div class="overlay-projeto">
-                <p>Ver no GitHub</p>
+        </div>
+</div>
+        <div id="modal" class="modal">
+        <div class="modal-conteudo">
+            <span class="fechar-modal" id="fecharModal">&times;</span>
+            <div class="modal-flex">
+            <img src="" alt="Imagem do projeto" class="modal-img" id="modalImagem">
+            <div class="modal-texto">
+                <h2 class="modal-titulo" id="modalTitulo"></h2>
+                <p class="modal-descricao" id="modalDescricao"></p>
+                <div class="modal-botoes">
+                <a href="#" class="botao" id="modalLink2" target="_blank">Acessar repositório</a>
+                <a href="#" class="botao" id="modalLink3" target="_blank">Ver post no LinkedIn</a>
+                </div>
             </div>
-        </a>
-    </div>
+            </div>
+        </div>
+</div>
 </section>
 
 <section id="contato">
@@ -166,6 +214,7 @@
 
     </div>
 </section>
+
     <script>
         const texto = "Olá, eu sou o Deivid :)";
         let index = 0;
@@ -227,6 +276,53 @@
 
     document.querySelectorAll('.projeto-item').forEach(item => {
         observer.observe(item);
+    });
+    const modal = document.getElementById('modal');
+    const fecharModal = document.getElementById('fecharModal');
+
+    const modalTitulo = document.getElementById('modalTitulo');
+    const modalDescricao = document.getElementById('modalDescricao');
+    const modalImagem = document.getElementById('modalImagem');
+    const modalLink2 = document.getElementById('modalLink2');
+    const modalLink3 = document.getElementById('modalLink3');
+
+    // Abrir modal com dados
+    document.querySelectorAll('.abrir-modal').forEach(botao => {
+    botao.addEventListener('click', () => {
+        modal.style.display = 'flex';
+        modalTitulo.textContent = botao.dataset.titulo;
+        modalDescricao.innerHTML = botao.dataset.descricao.replace(/(\r\n|\n|\r|&#10;)/g, "<br>");
+        modalImagem.src = botao.dataset.imagem;
+        if (botao.dataset.link2 && botao.dataset.link2 !== "#") {
+            modalLink2.href = botao.dataset.link2;
+            modalLink2.style.pointerEvents = "auto";
+            modalLink2.style.opacity = "1";
+        } else {
+            modalLink2.href = "#";
+            modalLink2.style.pointerEvents = "none";
+            modalLink2.style.opacity = "0.5";
+        }
+        if (botao.dataset.link3 && botao.dataset.link3 !== "#") {
+            modalLink3.href = botao.dataset.link3;
+            modalLink3.style.pointerEvents = "auto";
+            modalLink3.style.opacity = "1";
+        } else {
+            modalLink3.href = "#";
+            modalLink3.style.pointerEvents = "none";
+            modalLink3.style.opacity = "0.5";
+        }
+    });
+    });
+
+    // Fechar modal
+    fecharModal.addEventListener('click', () => {
+    modal.style.display = 'none';
+    });
+
+    window.addEventListener('click', (e) => {
+    if (e.target === modal) {
+        modal.style.display = 'none';
+    }
     });
 </script>
   </section>
