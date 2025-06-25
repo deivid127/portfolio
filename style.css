@@ -206,7 +206,7 @@ nav.show ul li a:hover {
 .contato-item img {
     width: 50px;
     height: 50px;
-    filter: none; /* Mostra a cor original dos ícones */
+    filter: none;
     margin-bottom: 10px;
 }
 
@@ -271,7 +271,7 @@ nav.show ul li a:hover {
 
 @media (min-width: 1100px) {
     .skills-grid {
-        grid-template-columns: repeat(6, 1fr); /* 6 colunas fixas em telas largas */
+        grid-template-columns: repeat(6, 1fr);
     }
 }
 

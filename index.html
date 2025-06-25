@@ -28,7 +28,6 @@
 
     <div class="overlay" id="overlay"></div>
 
-    <!-- Seção Início -->
 <section id="inicio">
     <h1 id="typewriter"></h1>
     <p>Desenvolvedor Full-Stack</p>
@@ -39,13 +38,10 @@
         <a href="assets/Curriculo_Deivid_Leite.pdf" download class="botao">Baixar Currículo</a>
     </div>
 </section>
-    <!-- Seção Sobre -->
     <section id="sobre">
         <h2>Sobre mim</h2>
         <p>Sou um jovem Desenvolvedor ainda buscando crescer na área, recentemente descobri duas áreas as quais quero seguir, que são: banco de dados e desenvolvimento BackEnd. Mas aceito qualquer desafio para me especializar mais a cada dia, sempre foi apaixonado por tecnologia e por observar o desenvolvimento de projetos, tenho experiência com alguma linguagens bastante utilizadas no mercado como Python, programação WEB (HTML5, CSS3 e JavaScript), C# entre outras listadas na aba "HABILIDADES", apaixonado por desenvolver softwares de diversas formas e abertos a novos desafios a todo momento.</p>
     </section>
-
-    <!-- Seção Habilidades -->
 <section id="habilidades">
     <h2>Minhas Habilidades</h2>
     <div class="skills-grid">
@@ -106,19 +102,13 @@
         </div>
 
         <div class="skill-card">
-            <!-- NoSQL -->
-            <svg width="48" height="48" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-                <ellipse cx="32" cy="10" rx="24" ry="8" fill="#888" />
-                <path d="M8,10 v36 a24,8 0 0,0 48,0 V10" fill="#888" />
-            </svg>
+            <img src="assets/pngwing.com.png" alt="Power BI" class="skill-icon">
             <span>NoSQL</span>
         </div>
 
     </div>
 </section>
-    
-    
-    <!-- Seção Projetos -->
+
 <section id="projetos">
     <h2>Meus Projetos</h2>
     <div class="projetos-grid">
@@ -143,13 +133,9 @@
                 <p>Ver no GitHub</p>
             </div>
         </a>
-
-        <!-- Pode adicionar mais projetos duplicando o bloco acima -->
-
     </div>
 </section>
 
-    <!-- Seção Contato -->
 <section id="contato">
     <h2>Contatos</h2>
     <div class="contato-grid">
@@ -181,7 +167,6 @@
     </div>
 </section>
     <script>
-        // Efeito de digitação
         const texto = "Olá, eu sou o Deivid :)";
         let index = 0;
         const speed = 100;
@@ -197,8 +182,6 @@
         window.onload = function() {
             typeWriter();
         };
-
-        // Menu hambúrguer + overlay
         const toggle = document.getElementById('menu-toggle');
         const menu = document.getElementById('menu');
         const overlay = document.getElementById('overlay');
@@ -214,7 +197,6 @@
             overlay.classList.remove('show');
         });
 
-        // Navbar aparece ao rolar pra cima
         let lastScroll = 0;
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
