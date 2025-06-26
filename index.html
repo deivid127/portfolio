@@ -8,6 +8,17 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/devicon@2.14.0/devicon.min.css">
+    <style>
+        /* Adicionando animação de fade-in para o modal */
+        .modal {
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .modal.show {
+            opacity: 1;
+        }
+    </style>
 </head>
 <body>
 
@@ -236,7 +247,7 @@
         };
         const toggle = document.getElementById('menu-toggle');
         const menu = document.getElementById('menu');
-        const overlay = document.getElementById('overlay');
+        const modalOverlay = document.getElementById('overlay');
 
         toggle.addEventListener('click', () => {
             menu.classList.toggle('show');
@@ -281,6 +292,7 @@
         observer.observe(item);
     });
     const modal = document.getElementById('modal');
+    const overlay = document.getElementById('overlay');
     const fecharModal = document.getElementById('fecharModal');
 
     const modalTitulo = document.getElementById('modalTitulo');
@@ -289,43 +301,53 @@
     const modalLink2 = document.getElementById('modalLink2');
     const modalLink3 = document.getElementById('modalLink3');
 
-    // Abrir modal com dados
+    // Abrir modal com fundo translúcido e animação de fade-in
     document.querySelectorAll('.abrir-modal').forEach(botao => {
-    botao.addEventListener('click', () => {
-        modal.style.display = 'flex';
-        modalTitulo.textContent = botao.dataset.titulo;
-        modalDescricao.innerHTML = botao.dataset.descricao.replace(/(\r\n|\n|\r|&#10;)/g, "<br>");
-        modalImagem.src = botao.dataset.imagem;
-        if (botao.dataset.link2 && botao.dataset.link2 !== "#") {
-            modalLink2.href = botao.dataset.link2;
-            modalLink2.style.pointerEvents = "auto";
-            modalLink2.style.opacity = "1";
-        } else {
-            modalLink2.href = "#";
-            modalLink2.style.pointerEvents = "none";
-            modalLink2.style.opacity = "0.5";
-        }
-        if (botao.dataset.link3 && botao.dataset.link3 !== "#") {
-            modalLink3.href = botao.dataset.link3;
-            modalLink3.style.pointerEvents = "auto";
-            modalLink3.style.opacity = "1";
-        } else {
-            modalLink3.href = "#";
-            modalLink3.style.pointerEvents = "none";
-            modalLink3.style.opacity = "0.5";
-        }
-    });
+        botao.addEventListener('click', () => {
+            modal.style.display = 'flex';
+            setTimeout(() => modal.classList.add('show'), 10); // Adiciona classe para animação
+            overlay.classList.add('show'); // Exibe fundo translúcido
+            modalTitulo.textContent = botao.dataset.titulo;
+            modalDescricao.innerHTML = botao.dataset.descricao.replace(/(\r\n|\n|\r|&#10;)/g, "<br>");
+            modalImagem.src = botao.dataset.imagem;
+            if (botao.dataset.link2 && botao.dataset.link2 !== "#") {
+                modalLink2.href = botao.dataset.link2;
+                modalLink2.style.pointerEvents = "auto";
+                modalLink2.style.opacity = "1";
+            } else {
+                modalLink2.href = "#";
+                modalLink2.style.pointerEvents = "none";
+                modalLink2.style.opacity = "0.5";
+            }
+            if (botao.dataset.link3 && botao.dataset.link3 !== "#") {
+                modalLink3.href = botao.dataset.link3;
+                modalLink3.style.pointerEvents = "auto";
+                modalLink3.style.opacity = "1";
+            } else {
+                modalLink3.href = "#";
+                modalLink3.style.pointerEvents = "none";
+                modalLink3.style.opacity = "0.5";
+            }
+        });
     });
 
-    // Fechar modal
+    // Fechar modal e remover fundo translúcido
     fecharModal.addEventListener('click', () => {
-    modal.style.display = 'none';
+        modal.classList.remove('show'); // Remove classe para animação
+        overlay.classList.remove('show'); // Remove fundo translúcido
+        setTimeout(() => {
+            modal.style.display = 'none';
+        }, 500); // Aguarda o término da animação
     });
 
     window.addEventListener('click', (e) => {
-    if (e.target === modal) {
-        modal.style.display = 'none';
-    }
+        if (e.target === overlay) {
+            modal.classList.remove('show'); // Remove classe para animação
+            overlay.classList.remove('show'); // Remove fundo translúcido
+            setTimeout(() => {
+                modal.style.display = 'none';
+            }, 500); // Aguarda o término da animação
+        }
     });
 </script>
   </section>
